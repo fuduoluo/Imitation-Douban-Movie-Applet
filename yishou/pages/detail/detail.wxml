@@ -1,0 +1,21 @@
+<!--pages/detail/detail.wxml-->
+<!--引入星星模块  -->
+<import src="../star/star"/>
+<view class="container" bindtap='watch'>
+   <image wx:if="{{ movie.images.large }}" class="background" src="{{ movie.images.large }}" mode="aspectFill" wx:key="id"/> 
+  <block wx:if="{{ movie.title }}" wx:key="id">
+    <view class="meta">
+      <image class="poster" src="{{ movie.images.large }}" mode="aspectFit"/>
+      <text class="title">{{ movie.title }}({{ movie.year }})</text>
+      <text class="info">评分：{{ movie.rating.average }}</text>
+      <template is="starsTemplate" data="{{array}}"></template>
+      <text class="info">导演：<block wx:for="{{ movie.directors }}" wx:key="id"> {{ item.name }} </block></text>
+      <text class="info">主演：<block wx:for="{{ movie.casts }}" wx:key="id"> {{ item.name }} </block></text>
+    </view>
+    <view class="summary">
+      <text class="label">摘要：</text>
+      <text class="content" wx:if="{{empty==true}}">{{ movie.summary }}</text>
+      <text class="content" wx:elif="{{empty==false}}">{{summary}}</text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,33 @@
+/**index.wxss**/
+ .slider swiper{
+  width: 750rpx;
+  height: 500rpx;
+}
+.slide-image{
+  height: 100%;
+  width: 100%;
+}
+.textHeight{
+  height: 100%;
+  font-size: 16px;
+  color: #ccc;
+}
+.border{
+  display: flex;
+  flex-direction: column;
+}
+.board-item{
+  display: flex;
+  flex: 1;
+  cursor: pointer;
+  border:1px solid #000;
+  border-radius: 10px;
+  padding: 30rpx;
+  margin-top: 10px;
+  width: 620rpx;
+  justify-content: space-between;
+  }
+.board-item image{
+  width: 50rpx;
+  height: 50rpx;
+}

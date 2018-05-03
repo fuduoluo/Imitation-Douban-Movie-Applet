@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class='slider'>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
+      <block wx:for="{{imgUrls}}" wx:for-item="itemName" wx:key="key">
+        <swiper-item>
+          <image src="{{itemName.img}}" class="slide-image" width="355" height="150" mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='textHeight'>
+    <view>
+      <rich-text nodes="{{nodes}}"></rich-text>
+    </view>
+    <text>最新 最IN的电影信息收集</text>
+  </view>
+  <!--显示电影资讯  -->
+  <view wx:for="{{List}}" wx:key="key">
+    <view class='border' bindtap='gotomovie'>
+      <navigator url="../list/list?type={{item.key}}&name={{item.name}}" hover-class='none'>
+      <view class='board-item'>
+        <text>{{item.name}}</text>
+        <image src="/image/gt.png"></image>
+      </view>
+    </navigator>
+  </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,4 @@
+<!--pages/video/video.wxml-->
+<view class="section tc ol">
+  <video id="myVideo"  src="{{url}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls bindwaiting></video>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/start/start.wxml-->
+<view class="container">
+    <image class="avatar" src="/image/avater.jpg"></image>
+    <text class="motto">Hello,抖森先森</text>
+    <view class="journey-container" bindtap="onTap">
+        <text class="journey">开启小程序之旅</text>
+    </view>
+</view>

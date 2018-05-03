@@ -1,0 +1,11 @@
+<!--pages/star/star.wxml-->
+<template name="starsTemplate">
+  <view class="stars-container">
+    <view class="stars">
+      <block wx:for="{{array}}" wx:for-item="i" wx:key="id">
+        <image wx:if="{{i}}" src="/image/star.png" style='height:40rpx; width:40rpx'></image>
+        <image wx:else src="/image/none-star.png" style='height:40rpx;width:40rpx;'></image>
+      </block>
+    </view>
+  </view>
+</template>

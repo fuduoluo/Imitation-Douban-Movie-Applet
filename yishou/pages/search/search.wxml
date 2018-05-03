@@ -1,0 +1,23 @@
+<!--pages/search/search.wxml-->
+<view class="section">
+  <input placeholder="输入电影名称" auto-focus bindchange="onbindchange"/>
+</view>
+ <view style='height:50px;text-align:center;color:red'>{{texts}}</view> 
+<view wx:for="{{list}}" class='detail' wx:key="key">
+  <navigator url="../detail/detail?id={{ item.id }}">
+    <view style='width:80px;'>
+      <image src="{{item.images.large}}"></image>
+    </view>
+    <view class='info'>
+      <text class='title'>{{item.title}}({{item.year}})</text>
+      <text class='original'>演员:<block wx:for="{{item.casts}}" wx:key="key">{{item.name}}  </block></text>
+      <text class='original'>导演:<block wx:for="{{item.directors}}" wx:key="key">{{item.name}}</block></text>
+      <text class='introduce'>简介:{{item.summary}}</text>
+    </view>
+    <view>
+      <view style='background:#f00; border-radius:5px;width:30px;color:#fff;text-align:center'>
+        <text>{{item.rating.average}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>

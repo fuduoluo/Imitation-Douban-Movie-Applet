@@ -1,0 +1,7 @@
+<!--pages/me/me.wxml-->
+<view class='flex'>
+  <text class='text'>About my information</text>
+  <view class='img'>
+    <image src="/image/mywechat.png"></image>
+  </view>
+</view>

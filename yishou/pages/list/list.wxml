@@ -1,0 +1,11 @@
+<!--pages/list/list.wxml-->
+<!-- <loading hidden="{{loading}}"></loading> -->
+<import src="../common/common"/>
+<!-- <view class='name'>{{title}}</view> -->
+<block>
+  <template is="item1" data="{{list}}" wx:if="{{titleid==true}}"/> 
+  <template is="item2" data="{{list}}" wx:else/>
+</block>
+
+
+

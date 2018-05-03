@@ -1,0 +1,7 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#35495E",
+  "navigationBarTitleText": "正在播放视频",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance": true
+}

@@ -1,0 +1,16 @@
+/* pages/me/me.wxss */
+.flex{
+  display: flex;
+  flex-direction: column;
+}
+.flex .text{
+    display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 20px;
+}
+.img{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

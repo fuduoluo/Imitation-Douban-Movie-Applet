@@ -1,0 +1,58 @@
+/* pages/search/search.wxss */
+.section{
+  margin: 10px;
+  border: 1px solid #000;
+  height: 30px;
+  border-radius:10px; 
+}
+.section button{
+  margin: 60px;
+}
+
+/* pages/list/list.wxss */
+.name{
+  display: flex;
+  flex-direction:row; 
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.detail navigator{
+    display: flex;
+    flex-direction: row;
+}
+.detail image {
+  width: 80px;
+  height: 80px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+}
+.info .title{
+  font-size: 16px;
+}
+.info .introduce {
+  overflow: hidden;
+  width: 250px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info .original {
+  font-size: 12px;
+  color: #333;
+  display: flex;
+}

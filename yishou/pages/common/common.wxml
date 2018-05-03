@@ -1,0 +1,59 @@
+<!--正在热映、即将上映，top250显示数据格式 -->
+<template name="item1">
+<view wx:for="{{list}}" class='detail' wx:key="key">
+  <navigator url="../detail/detail?id={{ item.id }}">
+    <view style='width:80px;'>
+      <image src="{{item.images.large}}"></image>
+    </view>
+    <view class='info'>
+      <text class='title'>{{item.title}}({{item.year}})</text>
+      <text class='original'>演员:<block wx:for="{{item.casts}}" wx:key="key">{{item.name}}  </block></text>
+      <text class='original'>导演:<block wx:for="{{item.directors}}" wx:key="key">{{item.name}}</block></text>
+      <text class='introduce'>简介:{{item.summary}}</text>
+    </view>
+    <view>
+      <view style='background:#f00; border-radius:5px;width:30px;color:#fff;text-align:center'>
+        <text>{{item.rating.average}}</text>
+      </view>
+    </view>
+  </navigator>
+  </view>
+</template>
+
+<!-- 在北美电影排行的API中数据格式与普通的API不同，这里是渲染北美电影排行的数据 -->
+<!-- 例如：https://api.douban.com/v2/movie/us_box?count=1 -->
+<template name="item2">
+<view wx:for="{{list}}" wx:key="id">
+  <navigator url="../item/item?id={{ item.subject.id }}">
+    <view class="item" style=' display: flex;  padding: 20rpx 40rpx;border-bottom: 1rpx solid #eee;cursor: pointer;'>
+      <image class="poster" src="{{ item.subject.images.small }}" style='  width: 128rpx;height: 168rpx;margin-right: 20rpx;'></image>
+      <view class="meta" style=' flex: 1;'>
+        <text  style='font-size: 32rpx;display:block;margin-bottom:15rpx;'>{{ item.subject.title }}</text>
+        <text  style='  font-size: 22rpx;color: #c0c0c'>{{ item.subject.original_title }} ({{ item.subject.year }})</text>
+        <view  style=' font-size: 24rpx;color: #999;'>导演：
+          <block wx:for="{{ item.directors }}" wx:key="id"> {{item.name}} </block>
+        </view>
+      </view>
+      <view id="rating">
+        <text>{{ item.subject.rating.average }}</text>
+      </view>
+    </view>
+  </navigator>
+  </view>
+</template>
+
+<!-- 电影列表组件 供每一个列表展示的页面使用 -->
+<template name="movie-list">
+  <view class="list">
+    <template is="{{ item.subject ? 'item2' : 'item1' }}" data="{{ item }}" wx:for="{{ movies }}" wx:key="id" />
+    <view class="tips">
+      <view wx:if="{{ hasMore }}">
+        <image src="/images/loading.gif" mode="aspectFill" />
+        <text>玩了命的加载中...</text>
+      </view>
+      <view wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+  </view>
+</template>
